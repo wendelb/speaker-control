@@ -1,0 +1,19 @@
+{
+  "name": "speaker-control",
+  "version": "1.0.0",
+  "description": "Control the speakers using the central hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wendelb/speaker-control.git"
+  },
+  "author": "Bernhard Wendel <bwendel@gmx.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wendelb/speaker-control/issues"
+  },
+  "homepage": "https://github.com/wendelb/speaker-control#readme"
+}
