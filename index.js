@@ -58,4 +58,8 @@ SpeakerControl.prototype.release = function() {
 	}
 };
 
+SpeakerControl.prototype.getCurrentStatus = function() {
+	return this.lockAcquired;
+};
+
 exports = module.exports = SpeakerControl
