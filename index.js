@@ -8,7 +8,8 @@ function trim(data) {
 function SpeakerControl(options) {
 	this.options = defaults(options, {
 		socket: '/run/speakers/socket',
-		name: 'SocketClient'
+		name: 'SocketClient',
+		debug: false
 	});
 	this.lockAcquired = false;
 
@@ -19,15 +20,21 @@ function SpeakerControl(options) {
 
 	this.client.on('data', (data) => {
 		data = trim(data.toString());
-		debug('Incoming data: ' + data);
+		if (this.options.debug) {
+			debug('Incoming data: ' + data);
+		}
 
 		// Do the Login
 		if (data == 'This is speakers') {
 			this.client.write('This is ' + this.options.name + "\n");
 		}
+
+		// When a lock has been acquired
 		if (data == 'acquired') {
 			this.lockAcquired = true;
 		}
+
+		// When a lock has been released
 		if (data == 'released') {
 			this.lockAcquired = false;
 		}
