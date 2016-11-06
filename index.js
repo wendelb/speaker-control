@@ -1,4 +1,5 @@
 var defaults = require('defaults');
+var net = require('net');
 var debug = require('debug')('SpeakerControl');
 
 function trim(data) {
